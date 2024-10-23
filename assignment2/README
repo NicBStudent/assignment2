@@ -1,0 +1,28 @@
+Compile with: javac -cp ".:junit-4.13.2.jar:hamcrest-core-1.3.jar" *.java
+
+Run tests with: java -cp ".:junit-4.13.2.jar:hamcrest-core-1.3.jar" org.junit.runner.JUnitCore (..x..)
+where (..x..) is the name of the class
+E.G to run the test cases replace with 'GETClientTest' without the quotes:
+java -cp ".:junit-4.13.2.jar:hamcrest-core-1.3.jar" org.junit.runner.JUnitCore GETClientTest
+
+Other test classes include:
+AggregationServerThreadTest
+ContentServerTest
+
+Run non-test classes with: java (..y..)
+where (..y..) is the name of the class
+E.G to run the aggregation server, replace (..y..) with 'AggregationServer' without the quotes:
+java AggregationServer
+
+Run the GETClient with:
+java GETClient *hostname:port* *id*
+
+where *hostname:port* is the url, and id is the station id.
+
+Run ContentServer with:
+java ContentServer *hostname:port* *filename*
+
+where *hostname:port* is url, filename is the name of the file to put onto the server
+
+When running the tests, ensure that the aggregation server is running otherwise certain tests will
+fail for the clients as they rely on the aggregation server.
